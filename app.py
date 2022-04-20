@@ -10,4 +10,4 @@ def update_audio_data_py(string, lang_code="EN-US"):
 
 
 eel.init('www')
-eel.start('index.html')
+eel.start('index.html', size=(320, 480))
