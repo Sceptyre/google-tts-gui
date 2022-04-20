@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="/eel.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Google TTS</title>
+</head>
+<body>
+    <div class="header">
+        <h1 class="text-center">
+            Googly TTS 📣
+        </h1>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="container text-center">
+                    <label for="lang" class="h4">Language: </label>
+                    <select name="lang" id="lang">
+                        <option value="EN-US">English</option>
+                        <option value="FR-CA">French</option>
+                        <option value="ES-US">Spanish</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <textarea type="text" name="string" id="string" class="w-100" style="min-height: 7em"></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <audio id="audio" src="" controls="true" class="w-100">
+                </audio>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button id="submit" class="btn btn-primary w-100">
+                    Action 🏃
+                </button>
+            </div>
+            <div class="col" hidden>
+                <a href="out/audio.wav" download="out.wav" id="download">
+                    <button class="btn btn-success w-100">
+                        Download 💾
+                    </button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="src/main.js"></script>
+</body>
+</html>
