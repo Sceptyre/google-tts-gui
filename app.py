@@ -1,5 +1,9 @@
+import os
 import eel
 from text_to_speech import text_to_speech
+
+if not os.path.exists('www/out'):
+    os.mkdir('www/out')
 
 @eel.expose
 def update_audio_data_py(string, lang_code="EN-US"):

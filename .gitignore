@@ -1,0 +1,5 @@
+env
+.env
+.apiKey
+www/out
+__pycache__
