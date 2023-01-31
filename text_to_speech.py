@@ -1,14 +1,18 @@
-from google.cloud import texttospeech_v1beta1 as texttospeech
+from google.cloud import texttospeech
 import os
 
 APIKEYFILEPATH = os.path.abspath(".apiKey")
 
-def text_to_speech(text, langCode="EN-US"):
-    if not langCode:
-        LANGCODE = "en-US"
-    else:
-        LANGCODE = langCode
+def text_to_speech(text, langCode="en-US"):
+    VOICE_IDS = {
+        'en-US': "F",
+        'es-US': "A",
+        'fr-CA': "A"
+    }
 
+    LANGCODE = langCode or "en-US"
+
+    voiceId = VOICE_IDS.get( LANGCODE ) or 'A'
 
     # Set environment variable to path of api key file
     os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = APIKEYFILEPATH
@@ -25,7 +29,7 @@ def text_to_speech(text, langCode="EN-US"):
     # voice gender ("neutral")
     voice = texttospeech.VoiceSelectionParams(
         language_code=LANGCODE,
-        name=f"{LANGCODE}-WaveNet-F"
+        name=f"{LANGCODE}-WaveNet-{voiceId}"
     )
 
     # Select the type of audio file you want returned
